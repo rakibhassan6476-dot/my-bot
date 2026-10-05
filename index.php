@@ -934,7 +934,7 @@ if ($state == 'wait_work_otp_confirm' && $text == '✅ কাজ শেষ') {
     exit;
 }
 
-if (strpos($text, 'জিমেইল কাজ') !== false || $text == '📧 জিমেইল কাজ') {
+if (strpos($text, '📧 জিমেইল কাজ') !== false) {
     if (($s['status_gmail'] ?? 'open') !== 'open') {
         bot('sendMessage', ['chat_id' => $chat_id, 'text' => "⚠️ দুঃখিত, বর্তমানে জিমেইলের কাজ বন্ধ আছে।"]);
         exit;
